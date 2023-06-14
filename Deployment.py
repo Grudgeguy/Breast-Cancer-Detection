@@ -1,7 +1,7 @@
 import json
 import requests
 import streamlit as st
-from streamlit_lottie import st_lottie
+# from streamlit_lottie import st_lottie
 import pandas as pd
 import time
 from sklearn.datasets import load_breast_cancer
@@ -92,21 +92,21 @@ pickle.dump(clflogr,open(filename,'wb'))
 loaded_model=pickle.load(open('trained_model.sav','rb'))#this is used to load the model 
 # rb means reading the binary file
 
-def load_lottieurl(url:str):
-    r=requests.get(url)
-    if r.status_code!=200:
-        return None
-    return r.json()
+# def load_lottieurl(url:str):
+#     r=requests.get(url)
+#     if r.status_code!=200:
+#         return None
+#     return r.json()
 
 
 
 def main():
     ####giving a title
     st.title('Breast Cancer Prediction Model!')
-    lottie_url=load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_t3cfpwqj.json")
-    st_lottie(
-        lottie_url
-    )
+#     lottie_url=load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_t3cfpwqj.json")
+#     st_lottie(
+#         lottie_url
+#     )
     ##getting the input data from the user
     ## radius	mean texture	mean perimeter	mean area	mean smoothness	mean compactness
     mean_radius=st.text_input('Enter mean radius')
